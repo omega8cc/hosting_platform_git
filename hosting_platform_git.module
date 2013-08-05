@@ -15,14 +15,14 @@ function hosting_platform_git_form_alter(&$form, &$form_state, $form_id) {
       '#tree' => TRUE,
       '#title' => t('Deploy from Git'),
       '#collapsible' => TRUE,
-      '#description' => t('You may deploy this platform from a Git repository. This functionality cannot be combined with a Makefile.'),
-      '#weight' => -1,
+      '#collapsed' => TRUE,
+      '#weight' => 0,
     );
 
     $form['git']['repo_url'] = array(
       '#type' => 'textfield',
       '#title' => 'Repository URL',
-      '#description' => t('The full URL that you would pass to <em>git clone</em>. Example:  git@github.com:username/project.git or https://github.com/username/project.git. Note that this repository must be accessible by the Aegir user.'),
+      '#description' => t('You may deploy new platform from a Git repository. This functionality cannot be combined with a Makefile. The full URL that you would pass to <em>git clone</em>. Example: git@github.com:username/project.git or https://github.com/username/project.git. Note that this repository must be accessible by the Aegir user.'),
     );
 
     $form['git']['repo_branch'] = array(
